@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Badge } from '@chakra-ui/core';
 
 import './PokemonTile.css';
@@ -45,15 +46,15 @@ function PokemonTile({ pokemon }) {
   }
 
   return (
-    <div className="PokemonTile" ref={ref}>
-      <div className="PokemonTile-header">{`(${pokemon.id}) ${pokemon.name}`}</div>
+    <Link className="PokemonTile" to={`/${pokemon.num}`} ref={ref}>
+      <div className="PokemonTile-header">{`(${pokemon.num}) ${pokemon.name}`}</div>
       <img className="PokemonTile-img" alt={pokemon.name} loading="lazy" {...srcProp} />
       <div className="PokemonTile-types">
         {pokemon.type.map(pokemonType => (
           <Badge variant="solid" key={pokemonType} className={'type-background-' + pokemonType}>{pokemonType}</Badge>
         ))}
       </div>
-    </div>
+    </Link>
   );
 }
 

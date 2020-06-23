@@ -1,0 +1,109 @@
+.Detail-back {
+  cursor: pointer;
+}
+
+.Detail-header {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+}
+
+.Detail-header > * {
+  margin-right: 15px;
+}
+
+.Detail-evolutions {
+  display: flex;
+}
+
+.Detail-evolution-image, .Detail-current-image {
+  height: 120px;
+  width: 120px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Detail-current {
+  margin-right: 25px;
+}
+
+.Detail-evolution {
+  cursor: pointer;
+  margin-right: 25px;
+  text-decoration:inherit;
+  color: black;
+}
+
+.Detail-evolution:hover img {
+  height: 100px;
+  width: 100px;
+
+  -webkit-box-shadow: 10px 0px 107px 24px rgba(255,255,255,1);
+  -moz-box-shadow: 10px 0px 107px 24px rgba(255,255,255,1);
+  box-shadow: 10px 0px 107px 24px rgba(255,255,255,1);
+}
+
+.Detail-evolution-name, .Detail-current-name {
+  text-align: center;
+}
+
+.Detail-evolution img {
+  opacity: 0.4;
+}
+
+.Detail-types-header {
+  margin-top: 25px;
+  font-size: 25px;
+}
+
+.Detail-types-badges {
+  margin-top: 5px;
+  margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Detail-types-badges .Detail-types-badge {
+  height: 20px;
+  width: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 10px;
+}
+
+.Detail-weaknesses-header {
+  font-size: 25px;
+}
+
+.Detail-weaknesses-badges {
+  margin-top: 5px;
+  margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Detail-weaknesses-badges .Detail-weaknesses-badge {
+  height: 20px;
+  width: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 10px;
+}
+
+.Detail-dimensions {
+  margin-top: 10px;
+  font-size: 25px;
+  display: flex;
+}
+
+.Detail-dimensions > div:last-child {
+  margin-left: 20px;
+}

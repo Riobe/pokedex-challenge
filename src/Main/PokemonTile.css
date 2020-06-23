@@ -3,6 +3,8 @@
   width: 130px;
   background-color: rgba(245, 245, 245, 0.6);
   margin: 15px;
+  color: inherit;
+  text-decoration: inherit;
 
   -webkit-box-shadow: 9px 10px 24px -9px rgba(0,0,0,0.68);
   -moz-box-shadow: 9px 10px 24px -9px rgba(0,0,0,0.68);

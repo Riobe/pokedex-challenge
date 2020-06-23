@@ -5,7 +5,7 @@ import { ThemeProvider, theme, Spinner } from '@chakra-ui/core';
 import './App.css';
 
 import PokedexContext from './util/PokedexContext';
-import Main from './Main';
+import Layout from './Layout';
 
 const pokedexUrl = 'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json';
 
@@ -32,7 +32,7 @@ function App() {
           </div>
         ) : (
           <Router>
-            <Main />
+            <Layout />
           </Router>
         )}
       </PokedexContext.Provider>
