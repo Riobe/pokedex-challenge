@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { ThemeProvider, theme, Spinner } from '@chakra-ui/core';
 import './App.css';
 
+import PokedexContext from './util/PokedexContext';
+import Main from './Main';
+
+const pokedexUrl = 'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json';
+
 function App() {
+  const [pokedexData, setPokedexData] = useState();
+
+  useEffect(() => {
+    const getPokedexJson = async () => {
+      const res = await fetch(pokedexUrl);
+      const pokedexJson = await res.json();
+
+      setPokedexData(pokedexJson.pokemon);
+    };
+
+    getPokedexJson();
+  }, [setPokedexData]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <PokedexContext.Provider value={pokedexData}>
+        {!pokedexData ? (
+          <div className="App-loading">
+            <Spinner size="xl" />
+          </div>
+        ) : (
+          <Router>
+            <Main />
+          </Router>
+        )}
+      </PokedexContext.Provider>
+    </ThemeProvider>
   );
 }
 

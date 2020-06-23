@@ -1,0 +1,4 @@
+.PokemonTiles {
+  display: flex;
+  flex-wrap: wrap;
+}
